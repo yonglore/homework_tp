@@ -7,8 +7,8 @@ class ShoppingList:
         self._items = []
 
     def add_recipe(self, recipe: Recipe, portions: float):
-        if portions <= 0:
-            raise ValueError("Количество порций должно быть положительным числом")
+        if not Recipe.is_valid_ratio(portions):
+            raise ValueError("Количество порций должно быть положительным")
 
         for elem in recipe.scale(portions).ingredients:
             self._items.append((elem, recipe.title))
@@ -30,7 +30,7 @@ class ShoppingList:
 
         res = []
         for (name, unit), quantity in items_dict.items():
-            res.append(Ingredient(name, unit, quantity))
+            res.append(Ingredient(name, quantity, unit))
 
         res.sort(key=lambda x: x.name)
         return res
