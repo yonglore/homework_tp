@@ -2,7 +2,7 @@ from Ingredient import Ingredient
 
 
 class Recipe:
-    def __init__(self, title, ingredients):
+    def __init__(self, title, ingredients=None):
         self.title = title
         if ingredients is None:
             self.ingredients = []
