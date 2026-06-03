@@ -1,1 +1,12 @@
-/.venv/
+# всякий шлак
+.venv/
+.idea/
+.pytest_cache/
+__pycache__/
+*.pyc
+
+# по тз ваще не надо
+HW_2_OOP_Testing_Git.ipynb
+
+# у меня мак ос
+.DS_Store
